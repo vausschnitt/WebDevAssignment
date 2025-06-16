@@ -319,3 +319,60 @@ a.button:hover {
   float: left;
   padding-top: 5px;
 }
+.site-header {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.id-photo img {
+  width: 200px;
+  height: auto;
+}
+
+.ascii-block {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.emblem {
+  height: 310px;
+  width: auto;
+  image-rendering: pixelated;
+  filter: brightness(0) saturate(100%) invert(63%) sepia(93%) saturate(748%) hue-rotate(67deg) brightness(103%) contrast(103%);
+}
+
+.ascii-text {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .header-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ascii-block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ascii-text {
+    text-align: center;
+  }
+
+  .emblem {
+    height: 180px;
+  }
+}
