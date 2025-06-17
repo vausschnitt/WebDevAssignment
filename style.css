@@ -376,3 +376,129 @@ a.button:hover {
     height: 180px;
   }
 }
+/* css for timeline */
+.titleT {
+  text-align: center;
+}
+
+.timelineT {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+.timelineT::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  background-color: #00FF00; /* CRT green */
+}
+
+.entryT {
+  padding: 20px 30px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.entryT.leftT {
+  left: 0;
+}
+
+.entryT.rightT {
+  left: 50%;
+}
+
+.entryT::before {
+  content: " ";
+  position: absolute;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  border: 4px solid;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.entryT.leftT::before {
+  right: -10px;
+}
+
+.entryT.rightT::before {
+  left: -10px;
+}
+
+.contentT {
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.contentT h3 {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .timelineT::after {
+    left: 31px;
+  }
+
+  .entryT {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .entryT.rightT {
+    left: 0%;
+  }
+
+  .entryT.leftT::before,
+  .entryT.rightT::before {
+    left: 15px;
+  }
+}
+/* End of CSS for timeline */
+table, th, td {
+  border:1px solid #00dd00;
+}
+table img {
+  max-width: 100px;
+  height: auto;
+  border: 1px solid #00dd00;
+}
+/*tooltip styles*/
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #101010;
+  color: #00dd00;
+  text-align: center;
+  padding: 6px 12px;
+  border: 1px solid #00dd00;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'VT323', monospace;
+
+  position: absolute;
+  top: -10px;
+  left: 110%;
+  z-index: 99;
+  white-space: nowrap;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
